@@ -58,7 +58,6 @@ insert into Países (idPaís, Nombre) values (53, 'Ucrania');
 insert into Países (idPaís, Nombre) values (54, 'Alemania');
 insert into Países (idPaís, Nombre) values (55, 'Rusia');
 
-
 create table TargetasPartidos (
  idTargetaPartido INT PRIMARY KEY,
  TipoTargeta VARCHAR(50) NOT NULL
@@ -109,7 +108,8 @@ insert into Ciudades (idCiudad, Nombre, idPaís) values (26, 'Londres', 26);
 insert into Ciudades (idCiudad, Nombre, idPaís) values (27, 'San Petersburgo', 55);
 insert into Ciudades (idCiudad, Nombre, idPaís) values (28, 'Turín', 31);
 
-
+SELECT *
+FROM estadios
 
 
 create table Estadios (
@@ -117,7 +117,6 @@ create table Estadios (
  Capacidad INT NOT NULL,
  idCiudad INT NOT NULL,
  FOREIGN KEY (idCiudad) REFERENCES Ciudades(idCiudad)
-
 );
 insert into Estadios (idEstadio, Capacidad, idCiudad) values (1, 29.042, 1);
 insert into Estadios (idEstadio, Capacidad, idCiudad) values (2, 53.400, 2);
@@ -269,7 +268,7 @@ insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (20, '
 insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (21, 'Man United', 20, 6, 26);
 insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (22, 'Vilareal', 20, 6, 17);
 insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (23, 'Atalanta', 20, 6, 31);
-insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (24, 'Young Boys', 6, 20, 51);
+insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (24, 'Young Boys', 20, 6, 51);
 insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (25, 'LOSC', 20, 7, 20);
 insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (26, 'Salzburg', 20, 7, 4);
 insert into Equipos (idEquipo, Nombre, idTorneo, idGrupo, idPaís) values (27, 'Sevilla', 20, 7, 17);
@@ -578,8 +577,6 @@ create table Árbitros (
  idRol INT NOT NULL,
  FOREIGN KEY (idPaís) REFERENCES Países(idPaís),
  FOREIGN KEY (idRol) REFERENCES RolesÁrbitro(idRolesÁrbitro)
-
- 
 );
 insert into Árbitros (idÁrbitro, Edad, Nombre, idPaís, idRol) values (1, 42, 'Irv', 1, 1);
 insert into Árbitros (idÁrbitro, Edad, Nombre, idPaís, idRol) values (2, 47, 'Hercules', 2, 2);
@@ -766,4 +763,3 @@ insert into Resultados (idResultado, EquipoGanador, EquipoPerdedor, MarcadorDelP
 insert into Resultados (idResultado, EquipoGanador, EquipoPerdedor, MarcadorDelPartido, idPartido) values (18, 'Macedonian', 'Persian', 'Northern Sotho', 18);
 insert into Resultados (idResultado, EquipoGanador, EquipoPerdedor, MarcadorDelPartido, idPartido) values (19, 'Lao', 'Mongolian', 'Croatian', 19);
 insert into Resultados (idResultado, EquipoGanador, EquipoPerdedor, MarcadorDelPartido, idPartido) values (20, 'Tok Pisin', 'Malayalam', 'Latvian', 20);
-
